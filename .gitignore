@@ -1,2 +1,4 @@
 .env
 node_modules
+echo vite-dev.log >> .gitignore
+echo vite-dev.err.log >> .gitignore

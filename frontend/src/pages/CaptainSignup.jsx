@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link,} from 'react-router-dom'
 import { useState } from 'react'
 
 const CaptainSignup = () => {
@@ -9,24 +9,20 @@ const CaptainSignup = () => {
     const [firstName , setFirstName] = useState('')
     const [lastName, setLastName] = useState('');
     const [signupCaptainData, setSignupCaptainData] = useState({})
+
+    
   
-const submitHandler = (e) =>{
+const submitHandler = async (e) =>{
     e.preventDefault()
+
+    
 
     setFirstName('');
     setLastName('');
     setEmail('');
     setPassword('')
 
-    setSignupCaptainData({
-    username:{
-      firstName: firstName,
-      lastName: lastName
-    },
-    email: email,
-    password: password
-    })
-
+    
   
   }
 
@@ -39,7 +35,7 @@ const submitHandler = (e) =>{
             submitHandler(e)
           }}>
                    
-          <h3 className='text-base font-medium mb-2'>What's your name</h3>
+          <h3 className='text-base font-medium mb-2'>What's our Captain name</h3>
           <div className='flex gap-4'>
           <input
              required
@@ -63,7 +59,7 @@ const submitHandler = (e) =>{
            className='bg-gray-200 mb-6 rounded px-4 py-2 border w-1/2'
          />
         </div>
-              <h3 className='text-base font-medium mb-2'>What's your email</h3>
+              <h3 className='text-base font-medium mb-2'>What's our Captain email</h3>
             <input
             required
             type='email'
@@ -88,7 +84,7 @@ const submitHandler = (e) =>{
           />
           
           <button  className='bg-black text-white mb-7 rounded px-4 py-2  w-full text-lg '
-          >Signup</button>
+          >Create Account</button>
           
            <p className='text-center'>Already have an account?  <Link to='/captain-login' className='text-blue-600'>Login here</Link></p>
           </form>

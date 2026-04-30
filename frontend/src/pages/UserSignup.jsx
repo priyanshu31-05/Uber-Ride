@@ -1,6 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate} from 'react-router-dom'
 import { useState } from 'react';
+import axios from 'axios'
+import { UserDataContext} from '../context/UserContext'
 
 const UserSignup = () => {
   const [email, setEmail] = useState('');
@@ -9,22 +11,39 @@ const UserSignup = () => {
   const [lastName, setLastName] = useState('');
   const [signupData, setSignupData] = useState({})
 
-  const submitHandler = (e) =>{
+  const navigate = useNavigate()
+
+  const {user, setUser } = React.useContext(UserDataContext)
+
+  const submitHandler = async (e) =>{
     e.preventDefault()
 
+
+    const newUser = {
+    fullname:{
+      firstname: firstName,
+      lastname: lastName
+    },
+    email: email,
+    password: password
+    }
+     
+    const response = await axios.post(`${import.meta.env.VITE_BASE_URL || 'http://localhost:3000/api'}/users/register`, newUser)
+    
+    if(response.status === 201){
+      const data = response.data
+    
+      setUser(data.user)
+      navigate('/login')
+    }
+    
+    
     setFirstName('');
     setLastName('');
     setEmail('');
     setPassword('')
 
-    setSignupData({
-    username:{
-      firstName: firstName,
-      lastName: lastName
-    },
-    email: email,
-    password: password
-    })
+    
   }
   
   return (
@@ -40,6 +59,8 @@ const UserSignup = () => {
           <input
              required
               type='text'
+              name='firstname'
+              minLength={3}
              placeholder='Frist name'
             value={firstName}   
             onChange={(e) => {
@@ -51,6 +72,8 @@ const UserSignup = () => {
          <input
            required
            type='text'
+           name='lastname'
+           minLength={3}
            placeholder='Last name'
              value={lastName}     
              onChange={(e) => {
@@ -63,6 +86,7 @@ const UserSignup = () => {
             <input
             required
             type='email'
+              name='email'
               placeholder='email@example.com'
               value={email}
               onChange={(e) => {
@@ -75,6 +99,8 @@ const UserSignup = () => {
          <input
          required
           type='password'
+          name='password'
+          minLength={3}
            placeholder='password'
               value={password}   
               onChange={(e) => {

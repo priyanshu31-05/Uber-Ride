@@ -45,11 +45,11 @@ const Home = () => {
     <div className='h-screen relative overflow-hidden'>
      <img className='w-16 absolute left-5 top-5 ' src='https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png' alt=''/>
     
-    <div className='h-screen w-screen'>
+      <div className='h-screen w-screen'>
       <img className='h-full w-full object-cover' src='https://user-images.githubusercontent.com/6416095/52931260-c6bb5e80-3371-11e9-9d46-83f7d1389d18.gif' alt=''/>
-    </div>
+      </div>
 
-    <div className='flex flex-col justify-end absolute h-screen top-0 w-full '>
+      <div className='flex flex-col justify-end absolute h-screen top-0 w-full '>
     {/*one div*/}
       <div className='h-[30%] p-5 bg-white'>
          
@@ -100,11 +100,49 @@ const Home = () => {
        <div ref={panelRef} className='h-0 px-5 py-1 bg-white '>
          <LocationSearchPanel />
        </div>
-    </div>
+       </div>
 
-    <div>
+      <div className='fixed z-10 bottom-0 bg-white w-full p-2'>
+        <div className='flex items-center justify-between p-5 gap-3 border-2 rounded-xl border-black'>
+          <img className='h-10' src='https://cn-geo1.uber.com/image-proc/crop/resizecrop/udam/format=auto/width=956/height=538/srcb64=aHR0cHM6Ly90Yi1zdGF0aWMudWJlci5jb20vcHJvZC91ZGFtLWFzc2V0cy85MDM0YzIwMC1jZTI5LTQ5ZjEtYmYzNS1lOWQyNTBlODIxN2EucG5n' alt=''/>
+        <div className='w-1/2'>
+          <h4 className='font-medium text-sm'>UberGo <span><i className="ri-user-3-fill"></i></span></h4>
+          <h5 className='font-medium text-sm'>2 mins away</h5>
+          <p className='font-medium text-xs' > affordable, compact rides</p>
+        </div>
+        <h2 className='text-xl font-medium'>₹194.5</h2>
+        </div>
 
-     </div>
+         <div className='flex items-center justify-between p-5 gap-3 border-2 rounded-xl border-black'>
+          <img className='h-10' src='https://cn-geo1.uber.com/image-proc/crop/resizecrop/udam/format=auto/width=956/height=538/srcb64=aHR0cHM6Ly90Yi1zdGF0aWMudWJlci5jb20vcHJvZC91ZGFtLWFzc2V0cy85MDM0YzIwMC1jZTI5LTQ5ZjEtYmYzNS1lOWQyNTBlODIxN2EucG5n' alt=''/>
+        <div className='w-1/2'>
+          <h4 className='font-medium text-sm'>UberGo <span><i className="ri-user-3-fill"></i></span></h4>
+          <h5 className='font-medium text-sm'>2 mins away</h5>
+          <p className='font-medium text-xs' > affordable, compact rides</p>
+        </div>
+        <h2 className='text-xl font-medium'>₹194.5</h2>
+        </div>
+
+         <div className='flex items-center justify-between p-5 gap-3 border-2 rounded-xl border-black'>
+          <img className='h-10' src='https://cn-geo1.uber.com/image-proc/crop/resizecrop/udam/format=auto/width=956/height=538/srcb64=aHR0cHM6Ly90Yi1zdGF0aWMudWJlci5jb20vcHJvZC91ZGFtLWFzc2V0cy85MDM0YzIwMC1jZTI5LTQ5ZjEtYmYzNS1lOWQyNTBlODIxN2EucG5n' alt=''/>
+        <div className='w-1/2'>
+          <h4 className='font-medium text-sm'>UberGo <span><i className="ri-user-3-fill"></i></span></h4>
+          <h5 className='font-medium text-sm'>2 mins away</h5>
+          <p className='font-medium text-xs' > affordable, compact rides</p>
+        </div>
+        <h2 className='text-xl font-medium'>₹194.5</h2>
+        </div>
+
+         <div className='flex items-center justify-between p-5 gap-3 border-2 rounded-xl border-black'>
+          <img className='h-10' src='https://cn-geo1.uber.com/image-proc/crop/resizecrop/udam/format=auto/width=956/height=538/srcb64=aHR0cHM6Ly90Yi1zdGF0aWMudWJlci5jb20vcHJvZC91ZGFtLWFzc2V0cy85MDM0YzIwMC1jZTI5LTQ5ZjEtYmYzNS1lOWQyNTBlODIxN2EucG5n' alt=''/>
+        <div className='w-1/2'>
+          <h4 className='font-medium text-sm'>UberGo <span><i className="ri-user-3-fill"></i></span></h4>
+          <h5 className='font-medium text-sm'>2 mins away</h5>
+          <p className='font-medium text-xs' > affordable, compact rides</p>
+        </div>
+        <h2 className='text-xl font-medium'>₹194.5</h2>
+        </div>
+      </div>
 
     </div>
   )
